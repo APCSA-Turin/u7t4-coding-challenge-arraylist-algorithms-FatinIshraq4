@@ -1,6 +1,7 @@
 package com.example.project;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main{
     
@@ -15,7 +16,12 @@ public class Main{
     *  @param str String to insert
     */
     public static ArrayList<String> insertAfterI(ArrayList<String> stringList, String str){
-       return new ArrayList<String>();
+        for (int i=0; i<stringList.size(); i++) {
+            if (stringList.get(i).contains("i")) {
+                stringList.add(i, str);
+            }
+        }
+       return stringList;
     }
 
 
@@ -28,9 +34,18 @@ public class Main{
    *  @param stringList  original arraylist of Strings
    */
     public static ArrayList<String> removeThree(ArrayList<String> stringList){
-        return stringList;
+        ArrayList<String> changed = new ArrayList<String>();
+        for (int i=0; i<stringList.size(); i++) {
+            if (stringList.get(i).length()!=3) {
+                changed.add(stringList.get(i));
+            }
+        }
+        return changed;
     }
 
+    
+
+    
 
 
     /** Returns an ArrayList with all elements of arr reversed
@@ -41,8 +56,14 @@ public class Main{
    *  @param intList  original array of integers
    */
     public static ArrayList<Integer> reverseArray(int[] intList){
-        return new ArrayList<Integer>();
+        ArrayList<Integer> reversed = new ArrayList<Integer>();
+        for (int i=intList.length-1; i>0; i--) {
+            reversed.add(intList[i]);
+        }
+        reversed.add(intList[0]);
+        return reversed;
     }
+
 
 
 
@@ -59,8 +80,15 @@ public class Main{
      *  @param wordList  arraylist of Strings
      */
     public static ArrayList<String> duplicateUpperEnd(ArrayList<String> wordList){
+        int f = wordList.size();
+        for (int i=0; i<f; i++) {
+            String s = wordList.get(i).toUpperCase();
+            wordList.add(s);
+        }
         return wordList;
     }
+
+
 
 
 
@@ -78,7 +106,17 @@ public class Main{
    */
 
     public static ArrayList<String> parseSentence(String sentence){
-        return new ArrayList<String>();
+        ArrayList<String> parsed = new ArrayList<String>();
+        int lastSpace = 0;
+        for (int i=0; i<sentence.length(); i++) {
+            if (sentence.substring(i, i+1).equals(" ")) {
+                String s = sentence.substring(lastSpace, i);
+                parsed.add(s);
+                lastSpace=i+1;
+            }
+        }
+        parsed.add(sentence.substring(lastSpace));
+        return parsed;
     }
 
 
@@ -99,8 +137,16 @@ public class Main{
    *  @param wordList  arraylist of words
    */
     public static ArrayList<String> moveBWords(ArrayList<String> wordList){
+        for (int i=0; i<wordList.size(); i++) {
+            if (wordList.get(i).substring(0,1).equals("b") || wordList.get(i).substring(0,1).equals("B")) {
+                String str = wordList.get(i);
+                wordList.remove(str);
+                wordList.add(0, str);
+            }
+        }
         return wordList;
     }
+
 
 
 
@@ -114,8 +160,16 @@ public class Main{
      *  @param intList  intList of Integers
      */
     public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> intList){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i=0; i<intList.size(); i++) {
+            if (!(list.contains(intList.get(i)))) {
+                list.add(intList.get(i));
+            }
+        }
+        intList=list;
         return intList;
     }
+
 
     // Given an array of ints, 
     // return true if the array is length 1 or more, 
@@ -125,9 +179,13 @@ public class Main{
     // sameFirstLast([1, 2, 1]) → true
     //sameFirstLast([]) -> false
     public static boolean sameFirstLast(ArrayList<Integer> list){
+        if (list.size()>=1 && list.get(0)==list.get(list.size()-1)) {
+            return true;
+        }
         return false;
     }
 
+    
 
 
     // Given an array of ints, swap the first and last elements in the array. 
@@ -136,11 +194,18 @@ public class Main{
     // swapEnds([1, 2, 3]) → [3, 2, 1]
     // swapEnds([8, 6, 7, 9, 5]) → [5, 6, 7, 9, 8]
     // swapEnds([]->[])
-    public static ArrayList<Integer> swapEnds(ArrayList<Integer> list){        
+    public static ArrayList<Integer> swapEnds(ArrayList<Integer> list){  
+        if(list.size()<1) {return list;}
+        int first = list.get(0);
+        int last = list.get(list.size()-1);
+        list.remove(0);
+        list.remove(list.size()-1);
+        list.add(0, last);
+        list.add(first);
         return list;
     }
 
-
+    
 
     // Return an array that contains the exact same numbers as the given array, 
     // but rearranged so that all the zeros are grouped at the start of the array. 
@@ -150,8 +215,16 @@ public class Main{
     // zeroFront([0, 1, 1, 0, 1]) → [0, 0, 1, 1, 1]
     // zeroFront([1, 0]) → [0, 1]
     public static ArrayList<Integer> zeroFront(ArrayList<Integer> list){
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        ArrayList<Integer> list3 = new ArrayList<Integer>();
+        for (int i : list) {
+            if (i==0) {list2.add(0);} else {list3.add(i);}
+        }
+        for (int i : list3) {list2.add(i);}
+        list=list2;        
         return list;
     }
+
 
 
 
@@ -163,8 +236,23 @@ public class Main{
     // notAlone([1, 2, 3, 2, 5, 2], 2) → [1, 3, 3, 5, 5, 5]
     // notAlone([3, 4], 3) → [4,4]
     public static ArrayList<Integer> notAlone(ArrayList<Integer> list, int val){
+        for (int i=0; i<list.size()-1; i++) {
+            if(list.get(i)==val) {
+                if (list.get(i)<list.get(i+1)) {
+                    list.set(i, list.get(i+1));
+                }
+
+            }
+        }
+        int x = list.get(list.size()-1);
+        int y = list.get(list.size()-2);
+        if (y>x) {
+            list.set(list.indexOf(x), y);
+        }
         return list;
     }
+
+
 
 
 
@@ -175,8 +263,12 @@ public class Main{
     // shiftLeft([1]) → [1]
 
     public static ArrayList<Integer> shiftLeft(ArrayList<Integer> list){
+        list.add(list.size(), list.get(0));
+        list.remove(0);
         return list;
     }
+
+    
     
 
 
@@ -189,8 +281,21 @@ public class Main{
     // fix34([3, 2, 2, 4]) → [3, 4, 2, 2]
 
     public static ArrayList<Integer> fix34(ArrayList<Integer> list){
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        while(list.contains(4)) {
+            int i = list.indexOf(4);
+            list.remove(i);
+        }
+        for (int i : list) {
+            list2.add(i);
+            if (i==3) {
+                list2.add(4);
+            }
+        }
+        list=list2;
         return list;
     }
+
 
 
 
@@ -219,6 +324,123 @@ public class Main{
    *  @param numList  numList of ints
    */
     public static ArrayList<Integer> modes(int[] numList){
-        return new ArrayList<Integer>();
+        
     }
+
+    
+    public static void main(String[] args) {
+        //Test modes
+        int[] intList18 = {1, 2, 3, 4, 5, 6};
+        ArrayList<Integer> modes = Main.modes(intList18);
+        System.out.println(modes);
+
+        //Test fix34 (works but doesn't pass)
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list,1, 3, 1, 4, 4, 3, 1);
+        System.out.println(list);
+        System.out.println(fix34(list));
+        */
+
+        //Test shiftLeft (works and passes) 
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list,1,2);
+        System.out.println(list);
+        System.out.println(shiftLeft(list));
+        */
+        
+        //Test notAlone (works and passes)
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list,1,2,3,2,5,2);
+        System.out.println(list);
+        System.out.println(notAlone(list, 2));
+
+        //Test zeroFront (works and passes)
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list,1,0,0,1);
+        System.out.println(list);
+        System.out.println(zeroFront(list));
+        */
+
+        //Test swapends (works and passes)
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list, 1,2,3);
+        System.out.println(list);
+        System.out.println(swapEnds(list));
+        */
+
+        //Test sameFirstLast (works and passes) 
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); list.add(2); list.add(1);
+        System.out.println(sameFirstLast(list));
+        */
+
+        //Test removeDuplicates (works and passes)
+        /*
+        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 2, 5, 4, 2, 2, 1, 6, 4, 4, 8, 1, 7, 4, 2));
+        System.out.println(list);
+        System.out.println(removeDuplicates(list));
+        */
+
+        //Test moveBwords (works but no test)
+        /*
+        ArrayList<String> list = new ArrayList<String>();
+        String[] otherList = new String[] {"apple", "banana", "cherry", "donut", "Bagel", "danish", "berry", "baguette", "soda"};
+        list.addAll(Arrays.asList(otherList));
+        System.out.println(list);
+        moveBWords(list);
+        System.out.println((list));
+        */
+
+        //Test ParseSentence (works and passes)
+        /*
+        String s = "This is a sentence!";
+        System.out.println(s);
+        System.out.println((parseSentence(s)));
+        */
+
+        //Test duplicateUpperEnd (works but no test?)
+        /*
+        ArrayList<String> list = new ArrayList<String>();
+        String[] otherList = new String[] {"hello", "my", "best", "friend", "whats", "up"};
+        list.addAll(Arrays.asList(otherList));
+        System.out.println(list);
+        duplicateUpperEnd(list);
+        System.out.println((list));
+        */
+
+        //Test ReverseArray (works and passes)
+         /*
+         int[] otherList = new int[] {1, 2, 3, 4, 5, 6, 7};
+         System.out.println(otherList);
+         System.out.println(reverseArray(otherList));
+         */
+
+        //Test Remove 3 (works and passes)
+        /*
+        ArrayList<String> list = new ArrayList<String>();
+        String[] otherList = new String[] {"not", "skim", "a", "cat", "truck", "tar"};
+        list.addAll(Arrays.asList(otherList));
+        System.out.println(list);
+        System.out.println(removeThree(list));
+        */
+
+        //Test InsertAfterI (no work or pass)
+        /*
+        ArrayList<String> list = new ArrayList<String>();
+        String[] otherList = new String[] {"this", "is", "not", "a", "trivial", "task", "right?"};
+        list.addAll(Arrays.asList(otherList));
+        System.out.println(list);
+        insertAfterI(list, "bob");
+        System.out.println(list);
+        */     
+
+    }
+
+
 }
