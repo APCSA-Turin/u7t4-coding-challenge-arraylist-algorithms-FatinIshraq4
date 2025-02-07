@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Gradle Test Executor 14" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-02-06T17:31:38" hostname="codespaces-88527e" time="8.539">
+<testsuite name="Gradle Test Executor 3" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-02-07T17:14:47" hostname="codespaces-88527e" time="8.937">
   <properties/>
-  <testcase name="failed to execute tests" classname="Gradle Test Executor 14" time="8.539">
-    <failure message="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not complete execution for Gradle Test Executor 14." type="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException">org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not complete execution for Gradle Test Executor 14.
+  <testcase name="failed to execute tests" classname="Gradle Test Executor 3" time="8.937">
+    <failure message="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not complete execution for Gradle Test Executor 3." type="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException">org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not complete execution for Gradle Test Executor 3.
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:65)
 	at java.base@11.0.14.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.14.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -27,7 +27,7 @@ Caused by: java.lang.OutOfMemoryError: Java heap space
 	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
 	at java.base/java.util.ArrayList.grow(ArrayList.java:243)
 	at java.base/java.util.ArrayList.add(ArrayList.java:518)
-	at com.example.project.Main.insertAfterI(Main.java:21)
+	at com.example.project.Main.insertAfterI(Main.java:22)
 	at com.example.project.TestMain.testInsertAfterI(TestMain.java:18)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

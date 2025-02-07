@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+
 public class Main{
-    
-    
+   
+   
     /** Inserts toInsert after each String in stringList
     *  that contains the letter "i"
     *
@@ -26,6 +27,9 @@ public class Main{
 
 
 
+
+
+
     /** Removes all Strings from stringList that have a length of 3
    *
    *  DOES mutate (modify) elements of stringList.
@@ -43,9 +47,13 @@ public class Main{
         return changed;
     }
 
-    
 
-    
+   
+
+
+   
+
+
 
 
     /** Returns an ArrayList with all elements of arr reversed
@@ -63,6 +71,10 @@ public class Main{
         reversed.add(intList[0]);
         return reversed;
     }
+
+
+
+
 
 
 
@@ -92,6 +104,11 @@ public class Main{
 
 
 
+
+
+
+
+
     /** Returns an arraylist of Strings that represents the input sentence parsed
    *  into separate words, using a single space (" ") as the delimiter
    *
@@ -104,6 +121,7 @@ public class Main{
    *  @param sentence  the input String
    *  @return  new arraylist of Strings containing the words of sentence
    */
+
 
     public static ArrayList<String> parseSentence(String sentence){
         ArrayList<String> parsed = new ArrayList<String>();
@@ -118,6 +136,9 @@ public class Main{
         parsed.add(sentence.substring(lastSpace));
         return parsed;
     }
+
+
+
 
 
 
@@ -150,6 +171,10 @@ public class Main{
 
 
 
+
+
+
+
     /** Removes all duplicate values from an intList, leaving only the first
      *  occurrence in the arrayList; for example, this method will modify
      *  [1, 2, 5, 4, 2, 2, 1, 6, 4, 4, 8, 1, 7, 4, 2] --> [1, 2, 5, 4, 6, 8, 7]
@@ -171,8 +196,10 @@ public class Main{
     }
 
 
-    // Given an array of ints, 
-    // return true if the array is length 1 or more, 
+
+
+    // Given an array of ints,
+    // return true if the array is length 1 or more,
     // and the first element and the last element are equal.
     // sameFirstLast([1, 2, 3]) → false
     // sameFirstLast([1, 2, 3, 1]) → true
@@ -185,10 +212,13 @@ public class Main{
         return false;
     }
 
-    
+
+   
 
 
-    // Given an array of ints, swap the first and last elements in the array. 
+
+
+    // Given an array of ints, swap the first and last elements in the array.
     // Return the modified array. The array length will be at least 1.
     // swapEnds([1, 2, 3, 4]) → [4, 2, 3, 1]
     // swapEnds([1, 2, 3]) → [3, 2, 1]
@@ -205,11 +235,13 @@ public class Main{
         return list;
     }
 
-    
 
-    // Return an array that contains the exact same numbers as the given array, 
-    // but rearranged so that all the zeros are grouped at the start of the array. 
-    // The order of the non-zero numbers does not matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}. 
+   
+
+
+    // Return an array that contains the exact same numbers as the given array,
+    // but rearranged so that all the zeros are grouped at the start of the array.
+    // The order of the non-zero numbers does not matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}.
     // You may modify and return the given array or make a new array.
     // zeroFront([1, 0, 0, 1]) → [0, 0, 1, 1]
     // zeroFront([0, 1, 1, 0, 1]) → [0, 0, 1, 1, 1]
@@ -228,9 +260,13 @@ public class Main{
 
 
 
-    // We'll say that an element in an array is "alone" if there are values before and after it, 
+
+
+
+
+    // We'll say that an element in an array is "alone" if there are values before and after it,
     // and those values are different from it. If the value is at the end compare to the left and if its at the beginning compare to the right
-    //Return a version of the given array where every instance 
+    //Return a version of the given array where every instance
     // of the given value which is alone is replaced by whichever value to its left or right is larger.
     // notAlone([1, 2, 3], 2) → [1, 3, 3]
     // notAlone([1, 2, 3, 2, 5, 2], 2) → [1, 3, 3, 5, 5, 5]
@@ -241,6 +277,7 @@ public class Main{
                 if (list.get(i)<list.get(i+1)) {
                     list.set(i, list.get(i+1));
                 }
+
 
             }
         }
@@ -256,11 +293,17 @@ public class Main{
 
 
 
-    // Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}. 
+
+
+
+
+
+    // Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}.
     // You may modify and return the given array;
     // shiftLeft([6, 2, 5, 3]) → [2, 5, 3, 6]
     // shiftLeft([1, 2]) → [2, 1]
     // shiftLeft([1]) → [1]
+
 
     public static ArrayList<Integer> shiftLeft(ArrayList<Integer> list){
         list.add(list.size(), list.get(0));
@@ -268,33 +311,61 @@ public class Main{
         return list;
     }
 
-    
-    
+
+   
+   
 
 
-    // Return an array that contains exactly the same numbers as the given array, 
-    // but rearranged so that every 3 is immediately followed by a 4. Do not move the 3's, 
-    // but every other number may move. The array contains the same number of 3's and 4's, 
+
+
+    // Return an array that contains exactly the same numbers as the given array,
+    // but rearranged so that every 3 is immediately followed by a 4. Do not move the 3's,
+    // but every other number may move. The array contains the same number of 3's and 4's,
     // every 3 has a number after it that is not a 3, and a 3 appears in the array before any 4.
     // fix34([1, 3, 1, 4]) → [1, 3, 4, 1]
     // fix34([1, 3, 1, 4, 4, 3, 1]) → [1, 3, 4, 1, 1, 3, 4]
     // fix34([3, 2, 2, 4]) → [3, 4, 2, 2]
 
+
     public static ArrayList<Integer> fix34(ArrayList<Integer> list){
-        ArrayList<Integer> list2 = new ArrayList<Integer>();
-        while(list.contains(4)) {
-            int i = list.indexOf(4);
-            list.remove(i);
+        int[] list2 = new int[list.size()];
+        for (int i=0; i<list.size(); i++) {
+            if (list.get(i)==3) {list2[i]=3; list.set(i, 0);} else {list2[i]=0;}
+            if (list.get(i)==4) {list.set(i, 0);}
+        } 
+        
+        for (int i=0; i<list2.length; i++) {
+            if (list2[i]==3) {list2[i+1]=4;}
         }
-        for (int i : list) {
-            list2.add(i);
-            if (i==3) {
-                list2.add(4);
+        
+        while(list.contains(0)) {
+            list.remove(list.indexOf(0));
+        }
+
+        for (int i=0; i<list.size(); i++) {
+            int x=0;
+            while (x<list2.length) {
+                if (list2[x]==0) {list2[x]=list.get(i);}
+                x++;
             }
+            
         }
-        list=list2;
+
+        ArrayList<Integer> list3 = new ArrayList<Integer>();
+        for (int i=0; i<list2.length; i++) {
+            list3.add(list2[i]);
+        }      
+
+        list=list3;
         return list;
-    }
+        }
+
+
+        
+
+
+
+
 
 
 
@@ -324,38 +395,41 @@ public class Main{
    *  @param numList  numList of ints
    */
     public static ArrayList<Integer> modes(int[] numList){
-        
+       return new ArrayList<Integer>();
     }
 
-    
+
+   
     public static void main(String[] args) {
         //Test modes
-        int[] intList18 = {1, 2, 3, 4, 5, 6};
-        ArrayList<Integer> modes = Main.modes(intList18);
-        System.out.println(modes);
+        
 
-        //Test fix34 (works but doesn't pass)
+
+        //Test fix34 (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
-        Collections.addAll(list,1, 3, 1, 4, 4, 3, 1);
+        Collections.addAll(list,3,2,2,4);
         System.out.println(list);
         System.out.println(fix34(list));
         */
 
-        //Test shiftLeft (works and passes) 
+
+        //Test shiftLeft (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
         Collections.addAll(list,1,2);
         System.out.println(list);
         System.out.println(shiftLeft(list));
         */
-        
+       
         //Test notAlone (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
         Collections.addAll(list,1,2,3,2,5,2);
         System.out.println(list);
         System.out.println(notAlone(list, 2));
+        */
+        
 
         //Test zeroFront (works and passes)
         /*
@@ -365,6 +439,7 @@ public class Main{
         System.out.println(zeroFront(list));
         */
 
+
         //Test swapends (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -373,12 +448,14 @@ public class Main{
         System.out.println(swapEnds(list));
         */
 
-        //Test sameFirstLast (works and passes) 
+
+        //Test sameFirstLast (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(1); list.add(2); list.add(1);
         System.out.println(sameFirstLast(list));
         */
+
 
         //Test removeDuplicates (works and passes)
         /*
@@ -386,6 +463,7 @@ public class Main{
         System.out.println(list);
         System.out.println(removeDuplicates(list));
         */
+
 
         //Test moveBwords (works but no test)
         /*
@@ -397,12 +475,14 @@ public class Main{
         System.out.println((list));
         */
 
+
         //Test ParseSentence (works and passes)
         /*
         String s = "This is a sentence!";
         System.out.println(s);
         System.out.println((parseSentence(s)));
         */
+
 
         //Test duplicateUpperEnd (works but no test?)
         /*
@@ -414,12 +494,14 @@ public class Main{
         System.out.println((list));
         */
 
+
         //Test ReverseArray (works and passes)
          /*
          int[] otherList = new int[] {1, 2, 3, 4, 5, 6, 7};
          System.out.println(otherList);
          System.out.println(reverseArray(otherList));
          */
+
 
         //Test Remove 3 (works and passes)
         /*
@@ -430,6 +512,7 @@ public class Main{
         System.out.println(removeThree(list));
         */
 
+
         //Test InsertAfterI (no work or pass)
         /*
         ArrayList<String> list = new ArrayList<String>();
@@ -438,9 +521,14 @@ public class Main{
         System.out.println(list);
         insertAfterI(list, "bob");
         System.out.println(list);
-        */     
+        */    
+
 
     }
 
 
+
+
 }
+
+
