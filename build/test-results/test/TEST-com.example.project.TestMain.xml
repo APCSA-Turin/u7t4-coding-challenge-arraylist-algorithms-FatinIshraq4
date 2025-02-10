@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.project.TestMain" tests="12" skipped="1" failures="1" errors="0" timestamp="2025-02-07T17:14:48" hostname="codespaces-88527e" time="8.614">
+<testsuite name="com.example.project.TestMain" tests="12" skipped="1" failures="1" errors="0" timestamp="2025-02-10T07:00:51" hostname="codespaces-88527e" time="6.104">
   <properties/>
-  <testcase name="testNotAlone()" classname="com.example.project.TestMain" time="0.039"/>
-  <testcase name="TestShiftLeft()" classname="com.example.project.TestMain" time="0.002"/>
-  <testcase name="testParseSentence()" classname="com.example.project.TestMain" time="0.004"/>
+  <testcase name="testNotAlone()" classname="com.example.project.TestMain" time="0.024"/>
+  <testcase name="TestShiftLeft()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testParseSentence()" classname="com.example.project.TestMain" time="0.003"/>
   <testcase name="testRemoveDuplicates()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testFix34()" classname="com.example.project.TestMain" time="0.005"/>
-  <testcase name="testMode()" classname="com.example.project.TestMain" time="0.012">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[2, 5]&gt; but was: &lt;[]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[2, 5]&gt; but was: &lt;[]&gt;
+  <testcase name="testFix34()" classname="com.example.project.TestMain" time="0.0"/>
+  <testcase name="testMode()" classname="com.example.project.TestMain" time="0.009">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[1, 2, 3, 4, 5, 6]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[1, 2, 3, 4, 5, 6]&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at app//com.example.project.TestMain.testMode(TestMain.java:185)
+	at app//com.example.project.TestMain.testMode(TestMain.java:212)
 	at java.base@11.0.14.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.14.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base@11.0.14.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -100,12 +100,12 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testSameFirstLast()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testSwapEnds()" classname="com.example.project.TestMain" time="0.012"/>
-  <testcase name="testZeroFront()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testSameFirstLast()" classname="com.example.project.TestMain" time="0.005"/>
+  <testcase name="testSwapEnds()" classname="com.example.project.TestMain" time="0.0"/>
+  <testcase name="testZeroFront()" classname="com.example.project.TestMain" time="0.0"/>
   <testcase name="testRemove3()" classname="com.example.project.TestMain" time="0.001"/>
   <testcase name="testReverseArray()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testInsertAfterI()" classname="com.example.project.TestMain" time="8.495">
+  <testcase name="testInsertAfterI()" classname="com.example.project.TestMain" time="6.027">
     <skipped/>
   </testcase>
   <system-out><![CDATA[]]></system-out>

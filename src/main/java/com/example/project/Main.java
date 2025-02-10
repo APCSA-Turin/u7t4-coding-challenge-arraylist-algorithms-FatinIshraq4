@@ -395,16 +395,43 @@ public class Main{
    *  @param numList  numList of ints
    */
     public static ArrayList<Integer> modes(int[] numList){
-       return new ArrayList<Integer>();
+        ArrayList<Integer> modes = new ArrayList<>();
+        
+        int maxCount = 0;
+
+        for (int i = 0; i < numList.length; i++) {
+            int count = 0;
+            for (int j = 0; j < numList.length; j++) {
+                if (numList[i] == numList[j]) {
+                    count++;
+                }
+            }
+            
+            if (count > maxCount) {
+                maxCount = count;
+                modes.clear();
+                modes.add(numList[i]);
+            }
+            else if (count == maxCount && !modes.contains(numList[i])) {
+                modes.add(numList[i]);
+            }
+        }
+        
+        if (maxCount == 1) {
+            return new ArrayList<>();
+        }
+        
+        return modes;
     }
 
 
    
     public static void main(String[] args) {
-        //Test modes
+        //Test modes (works but doesn't pass) 
+
+        int[] intList22 = {1, 2, 3, 4, 5, 6};
+        System.out.println(modes(intList22));
         
-
-
         //Test fix34 (works and passes)
         /*
         ArrayList<Integer> list = new ArrayList<Integer>();
