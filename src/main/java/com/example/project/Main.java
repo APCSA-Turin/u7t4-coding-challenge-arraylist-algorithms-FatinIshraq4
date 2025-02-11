@@ -17,12 +17,13 @@ public class Main{
     *  @param str String to insert
     */
     public static ArrayList<String> insertAfterI(ArrayList<String> stringList, String str){
-        for (int i=0; i<stringList.size(); i++) {
+        for (int i = 0; i < stringList.size(); i++) {
             if (stringList.get(i).contains("i")) {
-                stringList.add(i, str);
+                stringList.add(i + 1, str);
+                i++;
             }
         }
-       return stringList;
+            return stringList;
     }
 
 
@@ -158,11 +159,13 @@ public class Main{
    *  @param wordList  arraylist of words
    */
     public static ArrayList<String> moveBWords(ArrayList<String> wordList){
+        int x=0;
         for (int i=0; i<wordList.size(); i++) {
             if (wordList.get(i).substring(0,1).equals("b") || wordList.get(i).substring(0,1).equals("B")) {
                 String str = wordList.get(i);
                 wordList.remove(str);
-                wordList.add(0, str);
+                wordList.add(x, str);
+                x++;
             }
         }
         return wordList;
