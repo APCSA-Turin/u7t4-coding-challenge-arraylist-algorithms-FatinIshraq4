@@ -417,8 +417,8 @@ public class Main{
             }
         }
         
-        if (maxCount == 1) {
-            return new ArrayList<>();
+        if (modes.size()==numList.length) {
+            modes.clear();
         }
         
         return modes;

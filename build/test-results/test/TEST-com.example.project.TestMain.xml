@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.project.TestMain" tests="12" skipped="1" failures="1" errors="0" timestamp="2025-02-10T07:00:51" hostname="codespaces-88527e" time="6.104">
+<testsuite name="com.example.project.TestMain" tests="12" skipped="1" failures="1" errors="0" timestamp="2025-02-11T16:19:12" hostname="codespaces-88527e" time="8.317">
   <properties/>
-  <testcase name="testNotAlone()" classname="com.example.project.TestMain" time="0.024"/>
+  <testcase name="testNotAlone()" classname="com.example.project.TestMain" time="0.025"/>
   <testcase name="TestShiftLeft()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testParseSentence()" classname="com.example.project.TestMain" time="0.003"/>
-  <testcase name="testRemoveDuplicates()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testFix34()" classname="com.example.project.TestMain" time="0.0"/>
-  <testcase name="testMode()" classname="com.example.project.TestMain" time="0.009">
+  <testcase name="testParseSentence()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testRemoveDuplicates()" classname="com.example.project.TestMain" time="0.005"/>
+  <testcase name="testFix34()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testMode()" classname="com.example.project.TestMain" time="0.01">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[1, 2, 3, 4, 5, 6]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[1, 2, 3, 4, 5, 6]&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -100,12 +100,12 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testSameFirstLast()" classname="com.example.project.TestMain" time="0.005"/>
-  <testcase name="testSwapEnds()" classname="com.example.project.TestMain" time="0.0"/>
-  <testcase name="testZeroFront()" classname="com.example.project.TestMain" time="0.0"/>
-  <testcase name="testRemove3()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testSameFirstLast()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testSwapEnds()" classname="com.example.project.TestMain" time="0.003"/>
+  <testcase name="testZeroFront()" classname="com.example.project.TestMain" time="0.001"/>
+  <testcase name="testRemove3()" classname="com.example.project.TestMain" time="0.0"/>
   <testcase name="testReverseArray()" classname="com.example.project.TestMain" time="0.001"/>
-  <testcase name="testInsertAfterI()" classname="com.example.project.TestMain" time="6.027">
+  <testcase name="testInsertAfterI()" classname="com.example.project.TestMain" time="8.24">
     <skipped/>
   </testcase>
   <system-out><![CDATA[]]></system-out>
